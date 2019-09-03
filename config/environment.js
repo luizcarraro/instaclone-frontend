@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'instaclone-frontend',
+    podModulePrefix: 'instaclone-frontend/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

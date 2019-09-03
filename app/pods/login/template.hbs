@@ -1,0 +1,65 @@
+<main class="login">
+  <div class="login__column">
+    <img src="/images/phone.png" alt="Phone Image" title="Phone Image" class="login__phone-image">
+  </div>
+  <section class="login__column">
+    <div class="login__section login__sign-in">
+      <img src="/images/logo.png" alt="Logo" title="Logo" class="login__logo">
+      <form method="GET" action="feed.html" class="login__form">
+        <div class="login__input-container">
+          <input value={{model.login}} type="text" name="username" placeholder="Usuário" required class="login__input">
+          {{input value=model.login type="text" name="username" placeholder="Usuário" required=true class="login__input"}}
+        </div>
+        <div class="login__input-container">
+          <input type="password" name="password" placeholder="Senha" required class="login__input">
+          <a href="#" class="login__form-link">Esqueci minha senha</a>
+        </div>
+        <div class="login__input-container">
+          <button value="Entrar" class="login__input login__input--btn">Entrar</button>
+        </div>
+      </form>
+      {{model.login}}
+      <br>
+      {{model.password}}
+      <span class="login__divider">ou</span>
+      <a class="login__fb-link" href="#">
+        <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i> Login com o Facebook
+      </a>
+    </div>
+    <div class="login__section login__sign-up">
+      <span class="login__text">
+        Não tem uma conta?
+        <a href="#" class="login__link">
+          Criar agora
+        </a>
+      </span>
+    </div>
+    <div class="login__section login__section--transparent login__app">
+      <span class="login__text">
+        Baixe o Aplicativo.
+      </span>
+      <div class="login__appstores">
+        <img src="/images/ios.png" alt="iOS" title="Get the app!" class="login__appstore">
+        <img src="/images/android.png" alt="Android" title="Get the app!" class="login__appstore">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <nav class="footer__nav">
+    <ul class="footer__list">
+      <li class="footer__list-item"><a href="#" class="footer__link">Sobre nós</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">Suporte</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">Blog</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">Mídia</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">api</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">Carreiras</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">privacidade</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">termos de uso</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">diretório</a></li>
+      <li class="footer__list-item"><a href="#" class="footer__link">idiomas</a></li>
+    </ul>
+  </nav>
+  <span class="footer__copyright">© 2019 instaclone</span>
+</footer>
