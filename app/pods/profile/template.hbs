@@ -6,7 +6,7 @@
       </div>
       <div class="profile__info">
         <div class="profile__name">
-          <h1 class="profile__title">{{model.username}}</h1>
+          <h1 class="profile__title">{{model.user.username}}</h1>
           <a href="edit-profile.html" class="profile__button u-fat-text">Editar Perfil</a>
           <i class="fa fa-cog fa-2x" id="cog"></i>
         </div>
@@ -22,25 +22,14 @@
           </li>
         </ul>
         <div class="profile__bio">
-          <span class="profile__full-name u-fat-text">{{model.name}}</span>
-          <p class="profile__full-bio">{{model.email}}</p>
+          <span class="profile__full-name u-fat-text">{{model.user.name}}</span>
+          <p class="profile__full-bio">{{model.user.email}}</p>
         </div>
       </div>
     </header>
     <div class="profile__pictures">
-      {{#each model.posts as |post|}}
-        <a href="image-detail.html" class="profile-picture">
-          <img src={{post.image}} class="profile-picture__picture" />
-          <h2>{{post.text}}</h2>
-          <div class="profile-picture__overlay">
-            <span class="profile-picture__number">
-              <i class="fa fa-heart"></i> 450
-            </span>
-            <span class="profile-picture__number">
-              <i class="fa fa-comment"></i> 39
-            </span>
-          </div>
-        </a>
+      {{#each model.posts as |postToShow|}}
+        {{profile-post post=postToShow}}
       {{/each}}
     </div>
   </section>

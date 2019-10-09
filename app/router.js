@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('login');
   this.route('feed');
   this.route('profile', { path: '/profile/:user_id'});
+  this.route('post');
 });
 
 export default Router;
