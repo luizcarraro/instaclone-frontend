@@ -5,22 +5,27 @@
   <section class="login__column">
     <div class="login__section login__sign-in">
       <img src="/images/logo.png" alt="Logo" title="Logo" class="login__logo">
-      <form method="GET" action="feed.html" class="login__form">
+      {{#if session.isAuthenticated}}
+        <h1>Logado</h1>
+      {{else}}
+        <h1>Deslogado</h1>
+      {{/if}}
+      <form class="login__form" {{action "login" on="submit"}}>
         <div class="login__input-container">
-          <input value={{model.login}} type="text" name="username" placeholder="Usuário" required class="login__input">
-          {{input value=model.login type="text" name="username" placeholder="Usuário" required=true class="login__input"}}
+          {{input value=identification type="text" name="username" placeholder="Usuário" required=true class="login__input"}}
         </div>
         <div class="login__input-container">
-          <input type="password" name="password" placeholder="Senha" required class="login__input">
+          {{input type="password" value=password placeholder="Senha" required=true class="login__input"}}
           <a href="#" class="login__form-link">Esqueci minha senha</a>
         </div>
         <div class="login__input-container">
           <button value="Entrar" class="login__input login__input--btn">Entrar</button>
         </div>
+        <div class="login__input-container" style="color:red">
+          {{errorMessage}}
+        </div>
+
       </form>
-      {{model.login}}
-      <br>
-      {{model.password}}
       <span class="login__divider">ou</span>
       <a class="login__fb-link" href="#">
         <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i> Login com o Facebook

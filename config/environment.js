@@ -47,6 +47,25 @@ module.exports = function(environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
+  ENV.authenticationURL = 'http://localhost:1337/auth/login'
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token',
+    routeAfterAuthentication: 'home',
+    routeIfAlreadyAuthenticated: 'home',
+    crossOriginWhitelist: [ENV.authenticationURL]
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV.authenticationURL,
+    identificationField: 'identification',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    // refreshAccessTokens: true, // Mudar quando for tratar isso
+    // serverTokenRefreshEndpoint: ENV.accountApi + '/login/refresh-token',
+    // refreshLeeway: 600,
+    // timeFactor: 1000
+  };
 
   return ENV;
 };

@@ -6,11 +6,5 @@ export default Route.extend({
       login: 'email@gmail.com',
       password: 'minhasenha123'
     }
-  },
-
-  actions: {
-    login() {
-      alert('Tentativa de login');
-    }
   }
 });
